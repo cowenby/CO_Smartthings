@@ -50,8 +50,8 @@ metadata {
 		status "button 4 held":  "command: 2001, payload: 8D"
 		status "wakeup":  "command: 8407, payload: "
 	}
-	tiles {
-		standardTile("button", "device.button", width: 2, height: 2) {
+	tiles(scale: 2) {
+		standardTile("button", "device.button", width: 1, height: 1) {
 			state "default", label: "", icon: "st.unknown.zwave.remote-controller", backgroundColor: "#ffffff"
 			state "button 1 pushed", label: "pushed #1", icon: "st.unknown.zwave.remote-controller", backgroundColor: "#79b821"
 			state "button 2 pushed", label: "pushed #2", icon: "st.unknown.zwave.remote-controller", backgroundColor: "#79b821"
@@ -62,9 +62,16 @@ metadata {
 			state "button 3 held", label: "held #3", icon: "st.unknown.zwave.remote-controller", backgroundColor: "#ffa81e"
 			state "button 4 held", label: "held #4", icon: "st.unknown.zwave.remote-controller", backgroundColor: "#ffa81e"
 		}
-		valueTile("battery", "device.battery", inactiveLabel: false, decoration: "flat") {
+		valueTile("battery", "device.battery", inactiveLabel: false, decoration: "flat", width: 2, height: 2) {
 			state "battery", label:'${currentValue}% battery', unit:""
 		}
+		standardTile("configure", "device.Configuration", decoration: "flat", width: 2, height: 2)
+
+        {
+
+			state "configure", label:'', action:"configuration.configure", icon:"st.secondary.configure"
+
+        }
 		main "button"
 		details(["button", "battery"])
 	}
