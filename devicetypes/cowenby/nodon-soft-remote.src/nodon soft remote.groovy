@@ -36,7 +36,7 @@ metadata {
 		capability "Battery"
 
 		fingerprint deviceId: "0x0101", inClusters: "0x86,0x72,0x70,0x80,0x84,0x85"
-		fingerprint mfr: "0165", prod: "0002", model: "0002", cc: "5E,85,59,80,5B,70,5A,72,73,86,84", ccOut: "5E,5B,2B,27,22,20,26,84", deviceJoinName: "NodOn Soft Remote"
+		//fingerprint mfr: "0165", prod: "0002", model: "0002", cc: "5E,85,59,80,5B,70,5A,72,73,86,84", ccOut: "5E,5B,2B,27,22,20,26,84", deviceJoinName: "NodOn Soft Remote"
 	}
 
 	simulator {
