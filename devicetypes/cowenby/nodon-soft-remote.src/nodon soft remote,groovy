@@ -23,9 +23,11 @@
  *  Button 4 double Tap is mapped to   "Button 8 Pushed" in Smartlighting
  *  Button 4 Hold Rlease is mapped to  "Button 8 Hold"   in Smartlighting
  *
+ *	V1.02 Beta by cowenby: Added dvice fingerprint for NodOn Soft Remote
+ *
  */
 metadata {
-	definition (name: "Nodon Soft Remote", namespace: "cowenby", author: "CodyO") {
+	definition (name: "Nodon Remote", namespace: "cowenby", author: "C. Owenby") {
 		capability "Actuator"
 		capability "Button"
 		capability "Holdable Button"
@@ -34,6 +36,7 @@ metadata {
 		capability "Battery"
 
 		fingerprint deviceId: "0x0101", inClusters: "0x86,0x72,0x70,0x80,0x84,0x85"
+		fingerprint mfr: "0165", prod: "0002", model: "0002", cc: "5E,85,59,80,5B,70,5A,72,73,86,84", ccOut: "5E,5B,2B,27,22,20,26,84" // Soft Remote 
 	}
 
 	simulator {
