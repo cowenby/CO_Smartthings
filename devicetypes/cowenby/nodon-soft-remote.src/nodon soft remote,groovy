@@ -25,7 +25,7 @@
  *
  */
 metadata {
-	definition (name: "Aeon Key Fob", namespace: "smartthings", author: "SmartThings") {
+	definition (name: "Nodon Soft Remote", namespace: "cowenby", author: "CodyO") {
 		capability "Actuator"
 		capability "Button"
 		capability "Holdable Button"
