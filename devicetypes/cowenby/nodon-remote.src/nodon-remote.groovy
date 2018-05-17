@@ -62,7 +62,7 @@ metadata {
 			state "button 3 held", label: "held #3", icon: "st.unknown.zwave.remote-controller", backgroundColor: "#ffa81e"
 			state "button 4 held", label: "held #4", icon: "st.unknown.zwave.remote-controller", backgroundColor: "#ffa81e"
 		}
-		valueTile("battery", "device.battery", inactiveLabel: false, decoration: "flat", width: 2, height: 2) {
+		valueTile("battery", "device.battery", inactiveLabel: false, decoration: "flat", width: 6, height: 4) {
 			state "battery", label:'${currentValue}% battery', unit:""
 		}
 		standardTile("configure", "device.Configuration", decoration: "flat", width: 2, height: 2)
@@ -73,7 +73,7 @@ metadata {
 
         }
 		main "button"
-		details(["button", "battery"])
+		details(["button", "battery", "configure"])
 	}
 }
 
