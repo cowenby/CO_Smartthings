@@ -8,9 +8,9 @@
  *	Modified for NodOn Octan Remote (CRC-3-1-0x) by Richard_Woodward
  *
  *	Octan supports 4 actions per button	Pushed
- *										Double Tap
- *										Held
- *										Hold Released
+ *						Double Tap
+ *						Held
+ *						Hold Released
  *
  *	v1.01 Updated to support all 16 actions:
  *  
