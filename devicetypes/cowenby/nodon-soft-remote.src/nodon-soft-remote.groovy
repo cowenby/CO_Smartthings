@@ -27,7 +27,7 @@
  *
  */
 metadata {
-	definition (name: "Nodon Remote", namespace: "cowenby", author: "C. Owenby") {
+	definition (name: "Nodon Soft Remote", namespace: "cowenby", author: "C. Owenby") {
 		capability "Actuator"
 		capability "Button"
 		capability "Holdable Button"
