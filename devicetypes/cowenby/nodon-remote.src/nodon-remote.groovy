@@ -110,7 +110,7 @@ def buttonEvent(button, held) {
     //log.debug("button=$button Held=$held")
 	if( held == 1) {
     	def ebutton = button +4
-    	createEvent(name: "button", value: "held", data: [buttonNumber: ebutton], descriptionText: "$device.displayName button $ebutton was pushed", isStateChange: true)
+    	createEvent(name: "button", value: "held", data: [buttonNumber: ebutton], descriptionText: "$device.displayName button $ebutton was held", isStateChange: true)
     }
     else if (held == 2) {
 		createEvent(name: "button", value: "held", data: [buttonNumber: button], descriptionText: "$device.displayName button $button was held", isStateChange: true)
@@ -147,14 +147,16 @@ def zwaveEvent(physicalgraph.zwave.Command cmd) {
 }
 
 def configurationCmds() {
-	delayBetween([ zwave.configurationV1.configurationSet(parameterNumber: 250, scaledConfigurationValue: 1).format(),
+	delayBetween([ 
+    zwave.configurationV1.configurationSet(parameterNumber: 250, scaledConfigurationValue: 1).format(),
    // zwave.associationV1.associationSet(groupingIdentifier: 2, nodeId: zwaveHubNodeId).format(),
    // zwave.associationV1.associationSet(groupingIdentifier: 3, nodeId: zwaveHubNodeId).format(),
   //  zwave.associationV1.associationSet(groupingIdentifier: 4, nodeId: zwaveHubNodeId).format(),
    // zwave.associationV1.associationSet(groupingIdentifier: 5, nodeId: zwaveHubNodeId).format(),
     zwave.configurationV1.configurationSet(configurationValue: [1], parameterNumber: 3, size: 1).format(),
     zwave.configurationV1.configurationSet(configurationValue: [3], parameterNumber: 8, size: 1).format(),
-	  zwave.associationV1.associationSet(groupingIdentifier:1, nodeId:zwaveHubNodeId).format() ],500)
+	  zwave.associationV1.associationSet(groupingIdentifier:1, nodeId:zwaveHubNodeId).format() 
+      ],500)
 }
 
 def configure() {
